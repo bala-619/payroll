@@ -35,7 +35,8 @@ class _LoginState extends State<Login> {
                       alignment: Alignment.topLeft,
                       child:GestureDetector(
                         onTap : () {
-                          Navigator.pop(context, MaterialPageRoute(builder: (context)=>Signup()),);
+                          Navigator.pop(context,
+                          );
                         },
                         child: Padding(
                           padding: const EdgeInsets.only(left: 28.0,top: 10),
