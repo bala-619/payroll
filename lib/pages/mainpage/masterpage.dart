@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:payroll/pages/mainpage/settings.dart';
 
 import 'dashboard.dart';
@@ -26,7 +27,7 @@ class _MasterpageState extends State<Masterpage> {
         width: width*0.7,
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
-        color: Colors.black12,
+        color: Colors.white,
         borderRadius: BorderRadius.only(topRight: Radius.circular(15),bottomRight: Radius.circular(15))
         ),
 
@@ -35,28 +36,28 @@ class _MasterpageState extends State<Masterpage> {
             children: [
               Container(
                 height: 50,
-                color: Color(0xff099FAF),
+                color: Color(0xff4852FF),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // Container(child: Image.asset("assets/images/logo-white.png", width:40)),
                     Container(
-                      child: Text('Payroll',style: TextStyle(color: Color(0xffffffff),fontSize: 16,fontWeight: FontWeight.bold),),
+                      child: Text('Payroll',style: TextStyle(color: Color(0xffffffff),fontSize: 16,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
                     )
                   ],
                 ),
               ),
               Container(
-                // height: 40,
+                 height: 40,
                 alignment: Alignment.centerLeft,
                 decoration: BoxDecoration(
                   // color: Colors.red
                   //  border: Border(bottom: BorderSide())
                 ),
                 child: ListTile(
-                  // leading:Image.asset("assets/",width: 30),
-                  title: Text('Dasboard', style: TextStyle(fontSize: 20,color:Color(0xff099FAF), fontFamily:'RR'), ),
+                  leading:SvgPicture.asset("assets/side-icon/dashboard.svg",width: 25,color:Color(0xff4852FF),),
+                  title: Text('Dasboard', style: TextStyle(fontSize: 20,color:Color(0xff4852FF), fontFamily:'RR'), ),
                   onTap: (){
                     setState(() {
                       menuSel=1;
@@ -67,15 +68,15 @@ class _MasterpageState extends State<Masterpage> {
                 ),
               ),
               Container(
-                // height: 40,
+                 height: 40,
                 alignment: Alignment.centerLeft,
                 decoration: BoxDecoration(
                   // color: Colors.red
                   //  border: Border(bottom: BorderSide())
                 ),
                 child: ListTile(
-                  // leading:Image.asset("assets/",width: 30),
-                  title: Text('Settings', style: TextStyle(fontSize: 20,color:Color(0xff099FAF), fontFamily:'RR'), ),
+                  leading:SvgPicture.asset("assets/side-icon/settings.svg",width: 25,color:Color(0xff4852FF),),
+                  title: Text('Settings', style: TextStyle(fontSize: 20,color:Color(0xff4852FF), fontFamily:'RR'), ),
                   onTap: (){
                     setState(() {
                       menuSel=2;
