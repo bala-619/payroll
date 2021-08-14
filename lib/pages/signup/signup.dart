@@ -34,11 +34,13 @@ class _SignupState extends State<Signup> {
                 padding: EdgeInsets.only(top: 20),
                 child: Image.asset("assets/login/signup-bg.jpg",width:280,fit:BoxFit.cover,),
               ),
+              Spacer(),
               Container(
                 width: width*0.6,
                 alignment: Alignment.center,
                 child: Text('Payroll at Your Fingertips Simplify Your Payroll Headaches',style: TextStyle(fontSize: 14,fontFamily:'RR',fontWeight: FontWeight.w500,color: Color(0xff7F7F7F)),textAlign:TextAlign.center, ),
               ),
+              Spacer(),
               Padding(
                 padding: const EdgeInsets.only(top:10.0),
                 child: Container(

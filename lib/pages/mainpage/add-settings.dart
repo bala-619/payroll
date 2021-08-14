@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:payroll/widgets/companySettingsTextField.dart';
 import 'package:payroll/widgets/navigationBarIcon.dart';
 
 
@@ -22,101 +23,44 @@ class _AddsettingsState extends State<Addsettings> {
     width2=width-16;
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
-            child: Column(
-              children: [
-                Container(
-                  width: width,
-                  height: 70,
-                  color: Color(0xff4852FF),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left:8.0, right: 8.0),
-                        child: GestureDetector(
-                            onTap: (){
-                              Navigator.pop(context,);
-                            },
-                            child: SvgPicture.asset("assets/login/backward-01.svg",width: 30,color:Colors.white ,),
-                        ),
+        body: Container(
+          child: Column(
+            children: [
+              Container(
+                width: width,
+                height: 70,
+                color: Color(0xff4852FF),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left:8.0, right: 8.0),
+                      child: GestureDetector(
+                          onTap: (){
+                            Navigator.pop(context,);
+                          },
+                          child: SvgPicture.asset("assets/login/backward-01.svg",width: 30,color:Colors.white ,),
                       ),
-                      Container(
-                        child: Text('Company Settings',style: TextStyle(color: Color(0xffffffff),fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
-                      ),
-                    ],
-                  ),
+                    ),
+                    Container(
+                      child: Text('Company Settings',style: TextStyle(color: Color(0xffffffff),fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
+                    ),
+                  ],
                 ),
-                SizedBox(height: 20.0,),
-                Container(
-                  width: width*0.9,
+              ),
+              SizedBox(height: 20.0,),
+              Container(
+                width: width*0.9,
+                height: height-120,
+                child: SingleChildScrollView(
                   child: Column(
                     children: [
-                       TextField(
-                        // controller: _text1,
-                        textAlignVertical: TextAlignVertical.center,
-                        textAlign: TextAlign.left,
-                        maxLines: 1,
-                        style:TextStyle(fontSize: 15,fontFamily:'RR',color:Color(0xff7F7F7F),),
-                        decoration: InputDecoration(
-                          fillColor: Color(0xffffffff),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: Color(0xffD2D2D2))
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xff929BC4)),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          hintText: "Enter Company Name",
-                          hintStyle:TextStyle(fontSize: 15,fontFamily:'RR',color:Color(0xffB6B6B6)),
-                          prefixIcon: Container(
-                            margin:  EdgeInsets.only(left: 0,),
-                            alignment: Alignment.center,
-                            child: Image.asset("assets/settings/condo.png",width: 23,color:Color(0xffB6B6B6) ,fit:BoxFit.cover,),
-                          ),
-                          prefixIconConstraints: BoxConstraints(
-                            maxHeight: 50,
-                            maxWidth: 50,
-                            minWidth: 40,
-                            minHeight: 40
-                          ),
-                        ),
-
-                      ),
+                      // Container(
+                      //   child: Image.asset("assets/settings/compny-icon/building.png",width: 80,),
+                      // ),
+                       SizedBox(height: 10,),
+                       CompanySettingsTextField(hintText: "Enter Company Name", img: "assets/settings/condo.png"),
                        SizedBox(height: 15,),
-                       TextField(
-                        // controller: _text1,
-                        textAlignVertical: TextAlignVertical.center,
-                        textAlign: TextAlign.left,
-                        maxLines: 1,
-                        style:TextStyle(fontSize: 15,fontFamily:'RR',color:Color(0xff7F7F7F),),
-                        decoration: InputDecoration(
-                          fillColor: Color(0xffffffff),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: Color(0xffD2D2D2))
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xff929BC4)),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          hintText: "Enter Contact Person",
-                          hintStyle:TextStyle(fontSize: 15,fontFamily:'RR',color:Color(0xffB6B6B6)),
-                          prefixIcon: Container(
-                            margin:  EdgeInsets.only(left: 0,),
-                            alignment: Alignment.center,
-                            child: Image.asset("assets/settings/condo.png",width: 23,color:Color(0xffB6B6B6) ,fit:BoxFit.cover,),
-                          ),
-                          prefixIconConstraints: BoxConstraints(
-                            maxHeight: 50,
-                            maxWidth: 50,
-                            minWidth: 40,
-                            minHeight: 40
-                          ),
-                        ),
-
-                      ),
+                      CompanySettingsTextField(hintText: "Enter Contact Person", img: "assets/settings/condo.png"),
                         SizedBox(height: 15,),
                         GestureDetector(
                           onTap : () {
@@ -152,104 +96,12 @@ class _AddsettingsState extends State<Addsettings> {
                       ),
                         ),
                       SizedBox(height: 15,),
-                      TextField(
-                        // controller: _text1,
-                        textAlignVertical: TextAlignVertical.center,
-                        textAlign: TextAlign.left,
-                        maxLines: 1,
-                        style:TextStyle(fontSize: 15,fontFamily:'RR',color:Color(0xff7F7F7F),),
-                        decoration: InputDecoration(
-                          fillColor: Color(0xffffffff),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: Color(0xffD2D2D2))
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xff929BC4)),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          hintText: "Enter Email-Id",
-                          hintStyle:TextStyle(fontSize: 15,fontFamily:'RR',color:Color(0xffB6B6B6)),
-                          prefixIcon: Container(
-                            margin:  EdgeInsets.only(left: 0,),
-                            alignment: Alignment.center,
-                            child: Image.asset("assets/settings/condo.png",width: 23,color:Color(0xffB6B6B6) ,fit:BoxFit.cover,),
-                          ),
-                          prefixIconConstraints: BoxConstraints(
-                              maxHeight: 50,
-                              maxWidth: 50,
-                              minWidth: 40,
-                              minHeight: 40
-                          ),
-                        ),
-
-                      ),
+                      CompanySettingsTextField(hintText: "Enter Email-Id", img: "assets/settings/condo.png"),
                       SizedBox(height: 15,),
-                      TextField(
-                        // controller: _text1,
-                        textAlignVertical: TextAlignVertical.center,
-                        textAlign: TextAlign.left,
-                        maxLines: 1,
-                        style:TextStyle(fontSize: 15,fontFamily:'RR',color:Color(0xff7F7F7F),),
-                        decoration: InputDecoration(
-                          fillColor: Color(0xffffffff),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: Color(0xffD2D2D2))
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xff929BC4)),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          hintText: "Enter Phone Number",
-                          hintStyle:TextStyle(fontSize: 15,fontFamily:'RR',color:Color(0xffB6B6B6)),
-                          prefixIcon: Container(
-                            margin:  EdgeInsets.only(left: 0,),
-                            alignment: Alignment.center,
-                            child: Image.asset("assets/settings/condo.png",width: 23,color:Color(0xffB6B6B6) ,fit:BoxFit.cover,),
-                          ),
-                          prefixIconConstraints: BoxConstraints(
-                              maxHeight: 50,
-                              maxWidth: 50,
-                              minWidth: 40,
-                              minHeight: 40
-                          ),
-                        ),
-
-                      ),
+                      CompanySettingsTextField(hintText: "Enter Phone Number", img: "assets/settings/condo.png"),
                       SizedBox(height: 15,),
-                      TextField(
-                        // controller: _text1,
-                        textAlignVertical: TextAlignVertical.center,
-                        textAlign: TextAlign.left,
-                        maxLines: 1,
-                        style:TextStyle(fontSize: 15,fontFamily:'RR',color:Color(0xff7F7F7F),),
-                        decoration: InputDecoration(
-                          fillColor: Color(0xffffffff),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: Color(0xffD2D2D2))
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xff929BC4)),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          hintText: "Enter Website",
-                          hintStyle:TextStyle(fontSize: 15,fontFamily:'RR',color:Color(0xffB6B6B6)),
-                          prefixIcon: Container(
-                            margin:  EdgeInsets.only(left: 0,),
-                            alignment: Alignment.center,
-                            child: Image.asset("assets/settings/condo.png",width: 23,color:Color(0xffB6B6B6) ,fit:BoxFit.cover,),
-                          ),
-                          prefixIconConstraints: BoxConstraints(
-                              maxHeight: 50,
-                              maxWidth: 50,
-                              minWidth: 40,
-                              minHeight: 40
-                          ),
-                        ),
+                      CompanySettingsTextField(hintText: "Enter Website", img: "assets/settings/condo.png"),
 
-                      ),
                       SizedBox(height: 15,),
                       Center(
                         child: Column(
@@ -285,9 +137,9 @@ class _AddsettingsState extends State<Addsettings> {
                     ],
                   ),
                 ),
+              ),
 
-              ],
-            ),
+            ],
           ),
         ),
       ),

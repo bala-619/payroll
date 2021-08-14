@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payroll/model/settingsModel.dart';
 import 'package:payroll/widgets/navigationBarIcon.dart';
 
 import 'add-settings.dart';
@@ -15,6 +16,16 @@ class Settings extends StatefulWidget {
 
 class _SettingsState extends State<Settings> {
   GlobalKey <ScaffoldState> scaffoldkey=new GlobalKey<ScaffoldState>();
+  List<SettingsModel> settingsList=[
+    SettingsModel(title: "Company", img: "assets/settings/condo.png", selectColor: Color(0xff4852FF), unSelectColor: Color(0xff4852FF).withOpacity(0.3)),
+    SettingsModel(title: "Localization", img: "assets/settings/placeholder.png", selectColor: Color(0xffE64545), unSelectColor: Color(0xffE64545).withOpacity(0.3)),
+    SettingsModel(title: "Themes", img: "assets/settings/theme.png", selectColor: Color(0xff8165AD), unSelectColor: Color(0xff8165AD).withOpacity(0.3)),
+    SettingsModel(title: "Approval", img: "assets/settings/approval.png", selectColor: Color(0xff1D8E1D), unSelectColor: Color(0xff1D8E1D).withOpacity(0.3)),
+    SettingsModel(title: "Invoice", img: "assets/settings/invoice.png", selectColor: Color(0xff676767), unSelectColor: Color(0xff676767).withOpacity(0.3)),
+    SettingsModel(title: "Salary", img: "assets/settings/salary.png", selectColor: Color(0xff5156DF), unSelectColor: Color(0xff5156DF).withOpacity(0.3)),
+    SettingsModel(title: "Password", img: "assets/settings/padlock.png", selectColor: Color(0xff3B95D8), unSelectColor: Color(0xff3B95D8).withOpacity(0.3)),
+    SettingsModel(title: "Leave", img: "assets/settings/calendar.png", selectColor: Color(0xffE3C57B), unSelectColor: Color(0xffE3C57B).withOpacity(0.3)),
+  ];
   @override
   late  double width,height,width2;
   Widget build(BuildContext context) {
@@ -47,144 +58,35 @@ class _SettingsState extends State<Settings> {
             ),
             SizedBox(height: 20.0,),
             Wrap(
-              runSpacing:20.0,
-              spacing:20.0,
-              children: [
-                GestureDetector(
-                  onTap : () {
+              runSpacing: 30,
+              spacing: 30,
+              children: settingsList.asMap().map((i, value) => MapEntry(i, GestureDetector(
+                onTap: (){
+                  if(i==0){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Addsettings()),);
-                  },
-                  child: Column(
-                    children: [
-                      Container(
-                        width: 90,
-                        height: 90,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all( Radius.circular(50)),
-                          color: Color(0xff4852FF),
-                        ),
-                        child: Center(child: Image.asset("assets/settings/condo.png",width: 40,)),
-                      ),
-                      Container(
-                        child: Text('Company',style: TextStyle(color: Color(0xff62626C),fontSize: 16,fontWeight: FontWeight.w500,fontFamily: 'RR'),),
-                      ),
-                    ],
-                  ),
-                ),
-                Column(
+                  }
+                },
+                child:  Column(
                   children: [
                     Container(
-                      width: 90,
-                      height: 90,
+                      width: width*0.22,
+                      height: width*0.22,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all( Radius.circular(50)),
-                        color: Color(0xffFFF1F1),
+                        shape: BoxShape.circle,
+                       // borderRadius: BorderRadius.all( Radius.circular(50)),
+                        color: value.unSelectColor,
                       ),
-                      child: Center(child: Image.asset("assets/settings/placeholder.png",width: 40,)),
+                      child: Center(child: Image.asset(value.img,width: 40,)),
                     ),
+                    SizedBox(height: 5,),
                     Container(
-                      child: Text('Localization',style: TextStyle(color: Color(0xff62626C),fontSize: 16,fontWeight: FontWeight.w500,fontFamily: 'RR'),),
+                      child: Text(value.title,
+                        style: TextStyle(color: Color(0xff62626C),fontSize: 15,fontFamily: 'RM'),
+                      ),
                     ),
                   ],
                 ),
-                Column(
-                  children: [
-                    Container(
-                      width: 90,
-                      height: 90,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all( Radius.circular(50)),
-                        color: Color(0xffF4EBFF),
-                      ),
-                      child: Center(child: Image.asset("assets/settings/theme.png",width: 40,)),
-                    ),
-                    Container(
-                      child: Text('Themes',style: TextStyle(color: Color(0xff62626C),fontSize: 16,fontWeight: FontWeight.w500,fontFamily: 'RR'),),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      width: 90,
-                      height: 90,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all( Radius.circular(50)),
-                        color: Color(0xffF3F8F2),
-                      ),
-                      child: Center(child: Image.asset("assets/settings/approval.png",width: 40,)),
-                    ),
-                    Container(
-                      child: Text('Approval',style: TextStyle(color: Color(0xff62626C),fontSize: 16,fontWeight: FontWeight.w500,fontFamily: 'RR'),),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      width: 90,
-                      height: 90,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all( Radius.circular(50)),
-                        color: Color(0xffF1F1F1),
-                      ),
-                      child: Center(child: Image.asset("assets/settings/invoice.png",width: 40,)),
-                    ),
-                    Container(
-                      child: Text('Invoice',style: TextStyle(color: Color(0xff62626C),fontSize: 16,fontWeight: FontWeight.w500,fontFamily: 'RR'),),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      width: 90,
-                      height: 90,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all( Radius.circular(50)),
-                        color: Color(0xffECEDFF),
-                      ),
-                      child: Center(child: Image.asset("assets/settings/salary.png",width: 40,)),
-                    ),
-                    Container(
-                      child: Text('Salary',style: TextStyle(color: Color(0xff62626C),fontSize: 16,fontWeight: FontWeight.w500,fontFamily: 'RR'),),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      width: 90,
-                      height: 90,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all( Radius.circular(50)),
-                        color: Color(0xffF2F9FF),
-                      ),
-                      child: Center(child: Image.asset("assets/settings/padlock.png",width: 40,)),
-                    ),
-                    Container(
-                      child: Text('Password',style: TextStyle(color: Color(0xff62626C),fontSize: 16,fontWeight: FontWeight.w500,fontFamily: 'RR'),),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      width: 90,
-                      height: 90,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all( Radius.circular(50)),
-                        color: Color(0xffFFF9E6),
-                      ),
-                      child: Center(child: Image.asset("assets/settings/calendar.png",width: 40,)),
-                    ),
-                    Container(
-                      child: Text('Leave',style: TextStyle(color: Color(0xff62626C),fontSize: 16,fontWeight: FontWeight.w500,fontFamily: 'RR'),),
-                    ),
-                  ],
-                ),
-
-              ],
+              ))).values.toList()
             ),
           ],
         ),

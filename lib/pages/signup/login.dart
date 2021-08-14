@@ -12,10 +12,27 @@ class Login extends StatefulWidget {
   _LoginState createState() => _LoginState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginState extends State<Login> with TickerProviderStateMixin{
   final _text = TextEditingController();
   final _text1 = TextEditingController();
+  late AnimationController animationController;
+  late Animation<double> animation;
   bool _validate = false;
+
+  @override
+  void initState() {
+    animationController=AnimationController(vsync: this,duration: Duration(milliseconds: 500));
+    animation=Tween<double>(begin: 0.0,end: 1.0).animate(animationController);
+    animationController.forward();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+   animationController.dispose();
+    super.dispose();
+  }
+
   @override
   late  double width,height,width2,height2;
   Widget build(BuildContext context) {
@@ -46,7 +63,10 @@ class _LoginState extends State<Login> {
                     ),
                     Container(
                       padding: EdgeInsets.only(top: 20),
-                      child: Image.asset("assets/login/login.jpg",width:280,fit:BoxFit.cover,),
+                      child: ScaleTransition(
+                          scale: animation,
+                          child: Image.asset("assets/login/login.jpg",width:280,fit:BoxFit.cover,)
+                      ),
                     ),
                     Container(
                       width: width,
