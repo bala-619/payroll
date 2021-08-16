@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payroll/model/settingsModel.dart';
 import 'package:payroll/pages/settings/approvalSettings.dart';
+import 'package:payroll/pages/settings/salarySettings.dart';
 import 'package:payroll/pages/settings/theme-file.dart';
 import 'package:payroll/widgets/navigationBarIcon.dart';
 
@@ -73,12 +74,15 @@ class _SettingsState extends State<Settings> {
                   else if(i==3){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>ApprovalSettings()),);
                   }
+                  else if(i==5){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SalarySettings()),);
+                  }
                 },
                 child:  Column(
                   children: [
                     Container(
-                      width: width*0.22,
-                      height: width*0.22,
+                      width: width*0.20,
+                      height: width*0.20,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                        // borderRadius: BorderRadius.all( Radius.circular(50)),
