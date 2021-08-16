@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:payroll/model/settingsModel.dart';
+import 'package:payroll/pages/settings/theme-file.dart';
 import 'package:payroll/widgets/navigationBarIcon.dart';
 
-import 'add-settings.dart';
+import '../settings/add-settings.dart';
 
 
 class Settings extends StatefulWidget {
@@ -59,11 +60,14 @@ class _SettingsState extends State<Settings> {
             SizedBox(height: 20.0,),
             Wrap(
               runSpacing: 30,
-              spacing: 30,
+              spacing: 50,
               children: settingsList.asMap().map((i, value) => MapEntry(i, GestureDetector(
                 onTap: (){
                   if(i==0){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Addsettings()),);
+                  }
+                  if(i==2){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ThemeSettings()),);
                   }
                 },
                 child:  Column(

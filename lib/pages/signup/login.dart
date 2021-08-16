@@ -43,6 +43,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin{
     return SafeArea(
           child: Scaffold(
             body: Container(
+              color: Colors.white,
               width: width,
               height: height,
               child: SingleChildScrollView(

@@ -50,13 +50,14 @@ class _AddsettingsState extends State<Addsettings> {
               SizedBox(height: 20.0,),
               Container(
                 width: width*0.9,
-                height: height-120,
+                height: height-140,
                 child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
                   child: Column(
                     children: [
-                      // Container(
-                      //   child: Image.asset("assets/settings/compny-icon/building.png",width: 80,),
-                      // ),
+                      Container(
+                        child: Image.asset("assets/settings/compny-icon/building.png",width: 100,),
+                      ),
                        SizedBox(height: 10,),
                        CompanySettingsTextField(hintText: "Enter Company Name", img: "assets/settings/condo.png"),
                        SizedBox(height: 15,),
