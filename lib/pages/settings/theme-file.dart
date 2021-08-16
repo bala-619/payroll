@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:payroll/model/themeModule.dart';
-import 'package:payroll/widgets/companySettingsTextField.dart';
-import 'package:payroll/widgets/navigationBarIcon.dart';
 
 
 class ThemeSettings extends StatefulWidget {

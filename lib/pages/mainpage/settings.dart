@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payroll/model/settingsModel.dart';
+import 'package:payroll/pages/settings/approvalSettings.dart';
 import 'package:payroll/pages/settings/theme-file.dart';
 import 'package:payroll/widgets/navigationBarIcon.dart';
 
@@ -66,8 +67,11 @@ class _SettingsState extends State<Settings> {
                   if(i==0){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Addsettings()),);
                   }
-                  if(i==2){
+                  else if(i==2){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>ThemeSettings()),);
+                  }
+                  else if(i==3){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ApprovalSettings()),);
                   }
                 },
                 child:  Column(
