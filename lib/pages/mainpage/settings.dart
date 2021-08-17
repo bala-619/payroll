@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payroll/model/settingsModel.dart';
 import 'package:payroll/pages/settings/approvalSettings.dart';
+import 'package:payroll/pages/settings/leaveSettings.dart';
 import 'package:payroll/pages/settings/salarySettings.dart';
 import 'package:payroll/pages/settings/theme-file.dart';
 import 'package:payroll/widgets/navigationBarIcon.dart';
@@ -76,6 +77,9 @@ class _SettingsState extends State<Settings> {
                   }
                   else if(i==5){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>SalarySettings()),);
+                  }
+                  else if(i==7){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LeaveSettings()),);
                   }
                 },
                 child:  Column(
