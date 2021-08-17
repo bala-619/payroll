@@ -15,6 +15,9 @@ class _LeaveSettingsState extends State<LeaveSettings> {
   GlobalKey <ScaffoldState> scaffoldkey=new GlobalKey<ScaffoldState>();
 
   bool theme=false;
+  bool theme1=false;
+  bool theme2=false;
+  bool theme3=false;
   @override
   late  double width,height,width2;
   Widget build(BuildContext context) {
@@ -43,7 +46,7 @@ class _LeaveSettingsState extends State<LeaveSettings> {
                       ),
                     ),
                     Container(
-                      child: Text('Leave Settings',style: TextStyle(color: Color(0xffffffff),fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
+                      child: Text('Leave Type',style: TextStyle(color: Color(0xffffffff),fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
                     ),
                   ],
                 ),
@@ -64,12 +67,12 @@ class _LeaveSettingsState extends State<LeaveSettings> {
                         color: Colors.indigoAccent,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: Text('Add Leave Type',style: TextStyle(color: Color(0xffffffff),fontSize: 16,fontFamily: 'RR'),),
                       ),
                     ),
-                    Container(
-                      child: Text('Add Leave Type',style: TextStyle(color: Color(0xff676767),fontSize: 16,fontFamily: 'RR'),),
+                  Container(
+                      child: Text('Add Govt Holiday',style: TextStyle(color: Color(0xff676767),fontSize: 16,fontFamily: 'RR'),),
                     ),
                   ],
                 ),
@@ -82,7 +85,64 @@ class _LeaveSettingsState extends State<LeaveSettings> {
                   scrollDirection: Axis.vertical,
                   child: Column(
                     children: [
+                      Container(
+                        width: width,
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                            child: DataTable(
 
+                              columns: <DataColumn>[
+                                  DataColumn(
+                                  label: Text(
+                                  '#',
+                                  style: TextStyle(fontStyle: FontStyle.italic),
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'Leave Type',
+                                  style: TextStyle(fontStyle: FontStyle.italic),
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'Leave Days',
+                                  style: TextStyle(fontStyle: FontStyle.italic),
+                                ),
+                              ),
+                                DataColumn(
+                                  label: Text(
+                                    'Status',
+                                    style: TextStyle(fontStyle: FontStyle.italic),
+                                  ),
+                                ),
+                              ],
+                        rows: <DataRow>[
+                        DataRow(
+                              cells: <DataCell>[
+                              DataCell(Text('1')),
+                              DataCell(Text('Casual Leave')),
+                              DataCell(Text('12 Days')),
+                                DataCell(Container(
+                                  child: CupertinoSwitch(
+                                    value:theme,
+                                    activeColor: Color(0xffE2E2E2),
+                                    trackColor: Color(0xff4B5AFF),
+                                    onChanged: (bool value)
+                                    {
+                                      setState(() {
+                                        theme=value;
+                                      });
+                                    },
+                                  ),
+                                ),),
+                              ],
+                            ),
+
+                            ],
+                        ),
+                          ),
+                      ),
                       SizedBox(height:20,),
 
                     ],

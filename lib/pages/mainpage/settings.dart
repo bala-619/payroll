@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:payroll/model/settingsModel.dart';
 import 'package:payroll/pages/settings/approvalSettings.dart';
+import 'package:payroll/pages/settings/invoiceSettings.dart';
 import 'package:payroll/pages/settings/leaveSettings.dart';
+import 'package:payroll/pages/settings/localizationSettings.dart';
+import 'package:payroll/pages/settings/passwordSettings.dart';
 import 'package:payroll/pages/settings/salarySettings.dart';
 import 'package:payroll/pages/settings/theme-file.dart';
 import 'package:payroll/widgets/navigationBarIcon.dart';
@@ -69,14 +72,23 @@ class _SettingsState extends State<Settings> {
                   if(i==0){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Addsettings()),);
                   }
+                  if(i==1){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LocalizationSettings()),);
+                  }
                   else if(i==2){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>ThemeSettings()),);
                   }
                   else if(i==3){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>ApprovalSettings()),);
                   }
+                  else if(i==4){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>InvoiceSettings()),);
+                  }
                   else if(i==5){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>SalarySettings()),);
+                  }
+                  else if(i==6){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>PasswordSettings()),);
                   }
                   else if(i==7){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>LeaveSettings()),);
