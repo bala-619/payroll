@@ -54,6 +54,7 @@ flutter:
     - assets/settings/
     - assets/settings/compny-icon/
     - assets/settings/theme-icon/
+    - assets/attendance/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

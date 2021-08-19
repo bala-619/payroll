@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:payroll/pages/Attendance/attendance.dart';
 import 'package:payroll/pages/mainpage/settings.dart';
 
 import 'dashboard.dart';
@@ -13,7 +14,7 @@ class Masterpage extends StatefulWidget {
 class _MasterpageState extends State<Masterpage> {
   @override
   GlobalKey <ScaffoldState> scaffoldkey=new GlobalKey<ScaffoldState>();
-  int menuSel=2;
+  int menuSel=3;
   late  double width,height,width2;
   Widget build(BuildContext context) {
     width=MediaQuery.of(context).size.width;
@@ -86,6 +87,25 @@ class _MasterpageState extends State<Masterpage> {
 
                 ),
               ),
+              Container(
+                height: 40,
+                alignment: Alignment.centerLeft,
+                decoration: BoxDecoration(
+                  // color: Colors.red
+                  //  border: Border(bottom: BorderSide())
+                ),
+                child: ListTile(
+                  leading:SvgPicture.asset("assets/side-icon/settings.svg",width: 25,color:Color(0xff4852FF),),
+                  title: Text('Attendance', style: TextStyle(fontSize: 20,color:Color(0xff4852FF), fontFamily:'RR'), ),
+                  onTap: (){
+                    setState(() {
+                      menuSel=3;
+                    });
+                    scaffoldkey.currentState!.openEndDrawer();
+                  },
+
+                ),
+              ),
               //   Divider(color: Color(0xff099FAF),thickness: 0.1,),
 
 
@@ -102,7 +122,12 @@ class _MasterpageState extends State<Masterpage> {
 
               scaffoldkey.currentState!.openDrawer();
             },
-          ) :Container(),
+          ) :menuSel==3?Attendance (
+            voidCallback:(){
+
+              scaffoldkey.currentState!.openDrawer();
+            },
+          )  :Container(),
         ),
 
 
