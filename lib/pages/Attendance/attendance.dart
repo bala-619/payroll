@@ -50,157 +50,162 @@ class _AttendanceState extends State<Attendance> {
               SizedBox(height: 10.0,),
               Container(
                 width: width,
-                child: Column(
-                  mainAxisAlignment:MainAxisAlignment.center,
-                  children: [
-                     Container(
-                       child: Image.asset("assets/attendance/logo.jpg", width: 80,fit: BoxFit.cover,),
-                     ) ,
-                    SizedBox(height: 5.0,),
-                    //Login Successful-UI-Start
+                height: height-130,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Column(
+                    mainAxisAlignment:MainAxisAlignment.center,
+                    children: [
+                       Container(
+                         child: Image.asset("assets/attendance/logo.jpg", width: 80,fit: BoxFit.cover,),
+                       ) ,
+                      SizedBox(height: 5.0,),
+                      //Login Successful-UI-Start
 
-                    // Container(
-                    //     child: Text('Login Successful!',style: TextStyle(color: Color(0XFF2D972A),fontSize: 20,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
-                    // ),
-                    // SizedBox(height: 5.0,),
-                    // Container(
-                    //    child: Text('18 Aug 2021 / 09:21 AM',style: TextStyle(color: Color(0XFF000000),fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
-                    //  ),
-                    // SizedBox(height:5.0,),
-                    // Container(
-                    //   width: width*0.27,
-                    //   height: 30,
-                    //   decoration: BoxDecoration(
-                    //     borderRadius: BorderRadius.circular(5),
-                    //     // boxShadow: [
-                    //     //   BoxShadow(color: Colors.green, spreadRadius: 3),
-                    //     // ],
-                    //     color: Colors.indigoAccent,
-                    //   ),
-                    //   child:Center(child: Text('19:31AM',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Color(0xffffffff),fontFamily:'RR',letterSpacing: 2.0), )) ,
-                    // ),
+                      // Container(
+                      //     child: Text('Login Successful!',style: TextStyle(color: Color(0XFF2D972A),fontSize: 20,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
+                      // ),
+                      // SizedBox(height: 5.0,),
+                      // Container(
+                      //    child: Text('18 Aug 2021 / 09:21 AM',style: TextStyle(color: Color(0XFF000000),fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
+                      //  ),
+                      // SizedBox(height:5.0,),
+                      // Container(
+                      //   width: width*0.27,
+                      //   height: 30,
+                      //   decoration: BoxDecoration(
+                      //     borderRadius: BorderRadius.circular(5),
+                      //     // boxShadow: [
+                      //     //   BoxShadow(color: Colors.green, spreadRadius: 3),
+                      //     // ],
+                      //     color: Colors.indigoAccent,
+                      //   ),
+                      //   child:Center(child: Text('19:31AM',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Color(0xffffffff),fontFamily:'RR',letterSpacing: 2.0), )) ,
+                      // ),
 
-                    //Login Successful-UI-End
-                    Container(
-                      child: Text('Welcome Mr.Ramesh',style: TextStyle(color: Color(0XFF000000),fontSize: 20,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
-                    ),
-                    SizedBox(height: 5.0,),
-                    Container(
-                      child: Text('18 Aug 2021',style: TextStyle(color: Color(0XFF000000),fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
-                    ),
-                    SizedBox(height:5.0,),
-                    Container(
-                      width: width*0.27,
-                      height: 30,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        // boxShadow: [
-                        //   BoxShadow(color: Colors.green, spreadRadius: 3),
-                        // ],
-                        color: Colors.indigoAccent,
+                      //Login Successful-UI-End
+                      Container(
+                        child: Text('Welcome Mr.Ramesh',style: TextStyle(color: Color(0XFF000000),fontSize: 20,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
                       ),
-                      child:Center(child: Text('09:21AM',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Color(0xffffffff),fontFamily:'RR',letterSpacing: 2.0), )) ,
-                    ),
-                    SizedBox(height: 25.0,),
-                    Container(
-                             child: Image.asset("assets/attendance/profile.png" ,width: 200,fit: BoxFit.cover,),
-                    ) ,
-                    SizedBox(height: 25.0,),
-                    Container(
-                      width: width*0.75,
-                      child: Row(
-                        crossAxisAlignment:CrossAxisAlignment.center ,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: width*0.22,
-                            height: 120,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              // boxShadow: [
-                              //   BoxShadow(color: Colors.green, spreadRadius: 3),
-                              // ],
-                              color: Colors.white,
+                      SizedBox(height: 5.0,),
+                      Container(
+                        child: Text('18 Aug 2021',style: TextStyle(color: Color(0XFF000000),fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
+                      ),
+                      SizedBox(height:5.0,),
+                      Container(
+                        width: width*0.27,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          // boxShadow: [
+                          //   BoxShadow(color: Colors.green, spreadRadius: 3),
+                          // ],
+                          color: Colors.indigoAccent,
+                        ),
+                        child:Center(child: Text('09:21AM',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Color(0xffffffff),fontFamily:'RR',letterSpacing: 2.0), )) ,
+                      ),
+                      SizedBox(height: 25.0,),
+                      Container(
+                               child: Image.asset("assets/attendance/profile.png" ,width: 200,fit: BoxFit.cover,),
+                      ) ,
+                      SizedBox(height: 25.0,),
+                      Container(
+                        width: width*0.75,
+                        child: Row(
+                          crossAxisAlignment:CrossAxisAlignment.center ,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: width*0.22,
+                              height: 120,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                // boxShadow: [
+                                //   BoxShadow(color: Colors.green, spreadRadius: 3),
+                                // ],
+                                color: Colors.white,
+                              ),
+                              child:Column(
+                                mainAxisAlignment:MainAxisAlignment.center ,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  child: SvgPicture.asset("assets/attendance/face-id-01.svg" ,width: 40,color: Color(0XFF000000),),
+                                ),
+                                Container(
+                                    child: Text('Face Id',style: TextStyle(fontSize: 14,color: Color(0XFF000000),fontFamily:'RR',),
+                                    )
+                                ),
+                              ],
+                                ) ,
                             ),
-                            child:Column(
-                              mainAxisAlignment:MainAxisAlignment.center ,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                child: SvgPicture.asset("assets/attendance/face-id-01.svg" ,width: 40,color: Color(0XFF000000),),
+                            Container(
+                              width: width*0.22,
+                              height: 120,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                // boxShadow: [
+                                //   BoxShadow(color: Colors.green, spreadRadius: 3),
+                                // ],
+                                color: Colors.white,
                               ),
-                              Container(
-                                  child: Text('Face Id',style: TextStyle(fontSize: 14,color: Color(0XFF000000),fontFamily:'RR',),
-                                  )
-                              ),
-                            ],
+                              child:Column(
+                                mainAxisAlignment:MainAxisAlignment.center ,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    child: SvgPicture.asset("assets/attendance/finger print-01.svg" ,width: 40,),
+                                  ),
+                                  Container(
+                                      child: Text('Finger Print',style: TextStyle(fontSize: 14,color: Color(0XFF000000),fontFamily:'RR',),
+                                      )
+                                  ),
+                                ],
                               ) ,
-                          ),
-                          Container(
-                            width: width*0.22,
-                            height: 120,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              // boxShadow: [
-                              //   BoxShadow(color: Colors.green, spreadRadius: 3),
-                              // ],
-                              color: Colors.white,
                             ),
-                            child:Column(
-                              mainAxisAlignment:MainAxisAlignment.center ,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  child: SvgPicture.asset("assets/attendance/finger print-01.svg" ,width: 40,),
-                                ),
-                                Container(
-                                    child: Text('Finger Print',style: TextStyle(fontSize: 14,color: Color(0XFF000000),fontFamily:'RR',),
-                                    )
-                                ),
-                              ],
-                            ) ,
-                          ),
-                          Container(
-                            width: width*0.22,
-                            height: 120,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              // boxShadow: [
-                              //   BoxShadow(color: Colors.green, spreadRadius: 3),
-                              // ],
-                              color: Color(0XFFD4DBEC),
+                            Container(
+                              width: width*0.22,
+                              height: 120,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                // boxShadow: [
+                                //   BoxShadow(color: Colors.green, spreadRadius: 3),
+                                // ],
+                                color: Color(0XFFD4DBEC),
+                              ),
+                              child:Column(
+                                mainAxisAlignment:MainAxisAlignment.center ,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    child: SvgPicture.asset("assets/attendance/touch-01.svg" ,width: 40,),
+                                  ),
+                                  Container(
+                                      child: Text('Touch',style: TextStyle(fontSize: 14,color: Color(0XFF000000),fontFamily:'RR',),
+                                      )
+                                  ),
+                                ],
+                              ) ,
                             ),
-                            child:Column(
-                              mainAxisAlignment:MainAxisAlignment.center ,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  child: SvgPicture.asset("assets/attendance/touch-01.svg" ,width: 40,),
-                                ),
-                                Container(
-                                    child: Text('Touch',style: TextStyle(fontSize: 14,color: Color(0XFF000000),fontFamily:'RR',),
-                                    )
-                                ),
-                              ],
-                            ) ,
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 30.0,),
-                    Container(
-                      width: width*0.75,
-                      height: 60,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        // boxShadow: [
-                        //   BoxShadow(color: Colors.green, spreadRadius: 3),
-                        // ],
-                        color: Colors.indigoAccent,
+                      SizedBox(height: 30.0,),
+                      Container(
+                        width: width*0.75,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          // boxShadow: [
+                          //   BoxShadow(color: Colors.green, spreadRadius: 3),
+                          // ],
+                          color: Colors.indigoAccent,
+                        ),
+                        child:Center(child: Text('Done',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Color(0xffffffff),fontFamily:'RR'), )) ,
                       ),
-                      child:Center(child: Text('Done',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Color(0xffffffff),fontFamily:'RR'), )) ,
-                    ),
-                  ],
+                      SizedBox(height: 15.0,),
+                    ],
+                  ),
                 ),
               ),
             ],
