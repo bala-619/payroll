@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:payroll/model/settingsModel.dart';
 import 'package:payroll/pages/settings/approvalSettings.dart';
+import 'package:payroll/pages/settings/attendanceSettings.dart';
 import 'package:payroll/pages/settings/invoiceSettings.dart';
 import 'package:payroll/pages/settings/leaveSettings.dart';
 import 'package:payroll/pages/settings/localizationSettings.dart';
@@ -34,6 +35,7 @@ class _SettingsState extends State<Settings> {
     SettingsModel(title: "Salary", img: "assets/settings/salary.png", selectColor: Color(0xff5156DF), unSelectColor: Color(0xff5156DF).withOpacity(0.3)),
     SettingsModel(title: "Password", img: "assets/settings/padlock.png", selectColor: Color(0xff3B95D8), unSelectColor: Color(0xff3B95D8).withOpacity(0.3)),
     SettingsModel(title: "Leave", img: "assets/settings/calendar.png", selectColor: Color(0xffE3C57B), unSelectColor: Color(0xffE3C57B).withOpacity(0.3)),
+    SettingsModel(title: "Attendance", img: "assets/settings/attendance.png", selectColor: Color(0xff0C8C0C), unSelectColor: Color(0xff0C8C0C).withOpacity(0.3)),
   ];
   @override
   late  double width,height,width2;
@@ -94,6 +96,9 @@ class _SettingsState extends State<Settings> {
                   }
                   else if(i==7){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>LeaveSettings()),);
+                  }
+                  else if(i==8){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>AttendanceSettings()),);
                   }
                 },
                 child:  Column(

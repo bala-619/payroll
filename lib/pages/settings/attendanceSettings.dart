@@ -4,14 +4,14 @@ import 'package:payroll/widgets/companySettingsTextField.dart';
 
 
 
-class Addsettings extends StatefulWidget {
+class AttendanceSettings extends StatefulWidget {
 
 
   @override
-  _AddsettingsState createState() => _AddsettingsState();
+  _AttendanceSettingsState createState() => _AttendanceSettingsState();
 }
 
-class _AddsettingsState extends State<Addsettings> {
+class _AttendanceSettingsState extends State<AttendanceSettings> {
   GlobalKey <ScaffoldState> scaffoldkey=new GlobalKey<ScaffoldState>();
   final _text = TextEditingController();
   final _text1 = TextEditingController();
@@ -35,14 +35,14 @@ class _AddsettingsState extends State<Addsettings> {
                     Padding(
                       padding: const EdgeInsets.only(left:8.0, right: 8.0),
                       child: GestureDetector(
-                          onTap: (){
-                            Navigator.pop(context,);
-                          },
-                          child: SvgPicture.asset("assets/login/backward-01.svg",width: 30,color:Colors.white ,),
+                        onTap: (){
+                          Navigator.pop(context,);
+                        },
+                        child: SvgPicture.asset("assets/login/backward-01.svg",width: 30,color:Colors.white ,),
                       ),
                     ),
                     Container(
-                      child: Text('Company Settings',style: TextStyle(color: Color(0xffffffff),fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
+                      child: Text('Attendance Settings',style: TextStyle(color: Color(0xffffffff),fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
                     ),
                   ],
                 ),
@@ -58,44 +58,44 @@ class _AddsettingsState extends State<Addsettings> {
                       Container(
                         child: Image.asset("assets/settings/compny-icon/building.png",width: 100,),
                       ),
-                       SizedBox(height: 10,),
-                       CompanySettingsTextField(hintText: "Enter Company Name", img: "assets/settings/condo.png"),
-                       SizedBox(height: 15,),
+                      SizedBox(height: 10,),
+                      CompanySettingsTextField(hintText: "Enter Company Name", img: "assets/settings/condo.png"),
+                      SizedBox(height: 15,),
                       CompanySettingsTextField(hintText: "Enter Contact Person", img: "assets/settings/condo.png"),
-                        SizedBox(height: 15,),
-                        GestureDetector(
-                          onTap : () {
-                            _showMyDialog();
-                          },
-                          child: Container(
-                            height: 55,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Color(0xffD2D2D2)),
-                              borderRadius: BorderRadius.circular(10),
-                              ),
-                            child:Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
+                      SizedBox(height: 15,),
+                      GestureDetector(
+                        onTap : () {
+                          _showMyDialog();
+                        },
+                        child: Container(
+                          height: 55,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Color(0xffD2D2D2)),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child:Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
                                   width: width*0.6,
-                                padding: EdgeInsets.only(left: 5),
-                                child:Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Image.asset("assets/settings/condo.png",width: 23,color:Color(0xffB6B6B6) ,fit:BoxFit.cover,),
-                                    Text('Fill Your Office Location',style: TextStyle(fontSize: 15,fontFamily:'RR',color:Color(0xffB6B6B6)),)
-                                  ],
-                                )
-                                ),
-                                Container(
-                                  padding: EdgeInsets.only(right: 10),
-                                  child:Image.asset("assets/settings/condo.png",width: 23,color:Color(0xffB6B6B6) ,fit:BoxFit.cover,),
-                                )
-                              ],
-                            ) ,
+                                  padding: EdgeInsets.only(left: 5),
+                                  child:Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Image.asset("assets/settings/condo.png",width: 23,color:Color(0xffB6B6B6) ,fit:BoxFit.cover,),
+                                      Text('Fill Your Office Location',style: TextStyle(fontSize: 15,fontFamily:'RR',color:Color(0xffB6B6B6)),)
+                                    ],
+                                  )
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(right: 10),
+                                child:Image.asset("assets/settings/condo.png",width: 23,color:Color(0xffB6B6B6) ,fit:BoxFit.cover,),
+                              )
+                            ],
+                          ) ,
 
-                      ),
                         ),
+                      ),
                       SizedBox(height: 15,),
                       CompanySettingsTextField(hintText: "Enter Email-Id", img: "assets/settings/condo.png"),
                       SizedBox(height: 15,),
@@ -279,16 +279,16 @@ class _AddsettingsState extends State<Addsettings> {
                   Navigator.pop(context,);
                 },
                 child: Container(
-                    width: width*0.5,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      // boxShadow: [
-                      //   BoxShadow(color: Colors.green, spreadRadius: 3),
-                      // ],
-                      color: Colors.indigoAccent,
-                    ),
-                    child:Center(child: Text('Done',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Color(0xffffffff),fontFamily:'RR'), )) ,
+                  width: width*0.5,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    // boxShadow: [
+                    //   BoxShadow(color: Colors.green, spreadRadius: 3),
+                    // ],
+                    color: Colors.indigoAccent,
+                  ),
+                  child:Center(child: Text('Done',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Color(0xffffffff),fontFamily:'RR'), )) ,
 
                 ),
               ),

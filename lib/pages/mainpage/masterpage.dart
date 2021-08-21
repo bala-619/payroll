@@ -15,7 +15,7 @@ class Masterpage extends StatefulWidget {
 class _MasterpageState extends State<Masterpage> {
   @override
   GlobalKey <ScaffoldState> scaffoldkey=new GlobalKey<ScaffoldState>();
-  int menuSel=4;
+  int menuSel=2;
   late  double width,height,width2;
   Widget build(BuildContext context) {
     width=MediaQuery.of(context).size.width;
