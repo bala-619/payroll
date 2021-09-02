@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:payroll/pages/Attendance/reportDataTableWithoutModel.dart';
 import 'package:payroll/widgets/constants.dart';
+import 'package:payroll/widgets/linearProgressBar.dart';
 import 'package:payroll/widgets/navigationBarIcon.dart';
 import 'package:payroll/widgets/size.dart';
 
@@ -112,7 +113,22 @@ class _AttenSatusState extends State<AttenSatus> {
                           SizedBox(height: 5,),
                           Container(
                             // padding: EdgeInsets.only(left: 10),
-                            child: Text('Presents',style: TextStyle(color: Color(0xffffffff),fontSize: 18,fontFamily: 'RR'),textAlign: TextAlign.left,),
+                            child: Text(' Presents',
+                              style: TextStyle(color: Color(0xffffffff),fontSize: 16,fontFamily: 'RR'),textAlign: TextAlign.left,),
+                          ),
+                          SizedBox(height: 5,),
+                          Container(
+                            width: SizeConfig.screenWidth!*0.55,
+                            child: LinearPercentIndicator(
+                                    progressColor: Colors.yellow,
+                                    backgroundColor: Colors.white,
+                                    lineHeight: 4,
+                                    percent: 0.8,
+
+                                    trailing: Container(),
+                                    leading: Container(),
+                                    animation: true,
+                            ),
                           ),
                         ],
                       ),
