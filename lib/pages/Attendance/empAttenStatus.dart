@@ -78,7 +78,7 @@ class _AttenSatusState extends State<AttenSatus> {
               ),
               Container(
                 margin: EdgeInsets.only(left: 10),
-                height: 140,
+                height: 120,
                 width: SizeConfig.screenWidth,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
@@ -101,7 +101,7 @@ class _AttenSatusState extends State<AttenSatus> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Container(
-                                    child: Image.asset('assets/attendance/profile.png',width: 50,),
+                                    child: Image.asset('assets/attendance/profile.png',width: 40,),
                                   ),
                                   Container(
                                     width: SizeConfig.screenWidth!*0.30,
@@ -113,7 +113,7 @@ class _AttenSatusState extends State<AttenSatus> {
                           SizedBox(height: 5,),
                           Container(
                             // padding: EdgeInsets.only(left: 10),
-                            child: Text(' Presents',
+                            child: Text('  Presents',
                               style: TextStyle(color: Color(0xffffffff),fontSize: 16,fontFamily: 'RR'),textAlign: TextAlign.left,),
                           ),
                           SizedBox(height: 5,),
@@ -134,12 +134,62 @@ class _AttenSatusState extends State<AttenSatus> {
                       ),
                     ),
                    Container(
+                     padding: const EdgeInsets.all(15.0),
                      margin: EdgeInsets.all(8.0),
-                     width: SizeConfig.screenWidth!*0.45,
+                     width: SizeConfig.screenWidth!*0.55,
                      height: SizeConfig.screenHeight!*0.3,
                      decoration: BoxDecoration(
                        borderRadius: BorderRadius.all(Radius.circular(10)),
                        color: Color(0xffECEDFF),
+                     ),
+                     child: Column(
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: [
+                         Container(
+                           child: Row(
+                             mainAxisAlignment: MainAxisAlignment.start,
+                             crossAxisAlignment: CrossAxisAlignment.center,
+                             children: [
+                               Container(
+                                 child: Image.asset('assets/attendance/profile.png',width: 40,),
+                               ),
+                               Container(
+                                 width: SizeConfig.screenWidth!*0.30,
+                                 padding: EdgeInsets.only(left: 20),
+                                 child: RichText(
+                                   text: TextSpan(
+                                     text: '23.3 ',
+                                     style: TextStyle(color: Color(0xff5A5A5A),fontSize: 24,fontFamily: 'RB'),
+                                     children: const <TextSpan>[
+                                       TextSpan(text: 'Hours', style: TextStyle(fontSize: 14,fontFamily: 'RR')),
+                                     ],
+                                   ),
+                                 )
+                               ),
+                             ],
+                           ),
+                         ),
+                         SizedBox(height: 5,),
+                         Container(
+                           // padding: EdgeInsets.only(left: 10),
+                           child: Text('  Extra Hours',
+                             style: TextStyle(color: Color(0xff656666),fontSize: 16,fontFamily: 'RR'),textAlign: TextAlign.left,),
+                         ),
+                         SizedBox(height: 5,),
+                         Container(
+                           width: SizeConfig.screenWidth!*0.55,
+                           child: LinearPercentIndicator(
+                             progressColor: Color(0xff0033CC),
+                             backgroundColor: Colors.white,
+                             lineHeight: 4,
+                             percent: 0.8,
+
+                             trailing: Container(),
+                             leading: Container(),
+                             animation: true,
+                           ),
+                         ),
+                       ],
                      ),
                    ),
                   ],
