@@ -35,6 +35,7 @@ class _AttenSatusState extends State<AttenSatus> {
     width2=width-16;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xffffffff),
         key: scaffoldkey,
         resizeToAvoidBottomInset: false,
         bottomNavigationBar: CurvedNavigationBar(
@@ -202,6 +203,7 @@ class _AttenSatusState extends State<AttenSatus> {
 
                   scaffoldkey.currentState!.openDrawer();
                 },
+
                 topMargin: 5,
                 gridBodyReduceHeight: 350,
                 gridData: data,

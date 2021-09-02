@@ -48,6 +48,7 @@ class _AttendanceOverViewState extends State<AttendanceOverView> {
     width2=width-16;
     return SafeArea(
      child: Scaffold(
+       backgroundColor: Color(0xffffffff),
        key: scaffoldkey,
        resizeToAvoidBottomInset: false,
        bottomNavigationBar: CurvedNavigationBar(
