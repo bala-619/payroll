@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:payroll/model/settingsModel.dart';
+import 'package:payroll/pages/Attendance/profile.dart';
 import 'package:payroll/pages/settings/approvalSettings.dart';
 import 'package:payroll/pages/settings/attendanceSettings.dart';
 import 'package:payroll/pages/settings/invoiceSettings.dart';
@@ -98,7 +99,9 @@ class _SettingsState extends State<Settings> {
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>LeaveSettings()),);
                   }
                   else if(i==8){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>AttendanceSettings()),);
+                 //   Navigator.push(context, MaterialPageRoute(builder: (context)=>AttendanceSettings()),);
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Attendance(voidCallback: (){})),);
+
                   }
                 },
                 child:  Column(

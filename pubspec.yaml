@@ -32,6 +32,7 @@ dependencies:
   animated_splash_screen:
   page_transition:
   curved_navigation_bar:
+  intl:
 
 dev_dependencies:
   flutter_test:

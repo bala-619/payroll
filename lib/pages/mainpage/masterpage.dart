@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:payroll/pages/Attendance/attendance.dart';
+import 'package:payroll/pages/Attendance/EmpAttenReview.dart';
+import 'package:payroll/pages/Attendance/profile.dart';
 import 'package:payroll/pages/Employee/employee.dart';
 import 'package:payroll/pages/mainpage/settings.dart';
+import 'package:payroll/widgets/size.dart';
 
 import 'dashboard.dart';
 class Masterpage extends StatefulWidget {
@@ -21,6 +23,7 @@ class _MasterpageState extends State<Masterpage> {
     width=MediaQuery.of(context).size.width;
     height=MediaQuery.of(context).size.height;
     width2=width-16;
+    SizeConfig().init(context);
     return SafeArea(
         child: Scaffold(
           key: scaffoldkey,
@@ -142,7 +145,7 @@ class _MasterpageState extends State<Masterpage> {
 
               scaffoldkey.currentState!.openDrawer();
             },
-          ) :menuSel==3?Attendance (
+          ) :menuSel==3?AttendanceOverView (
             voidCallback:(){
 
               scaffoldkey.currentState!.openDrawer();
