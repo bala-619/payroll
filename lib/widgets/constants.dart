@@ -28,3 +28,4 @@ const Color addNewTextFieldFocusBorder=Color(0xFF6B6B6B);
 
 
  double attWidth=10;
+ double attWidth1=80;
