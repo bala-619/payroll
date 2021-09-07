@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:payroll/model/settingsModel.dart';
+import 'package:payroll/notifiers/themeNotifier.dart';
 import 'package:payroll/pages/Attendance/profile.dart';
 import 'package:payroll/pages/settings/approvalSettings.dart';
 import 'package:payroll/pages/settings/attendanceSettings.dart';
@@ -12,6 +13,7 @@ import 'package:payroll/pages/settings/passwordSettings.dart';
 import 'package:payroll/pages/settings/salarySettings.dart';
 import 'package:payroll/pages/settings/theme-file.dart';
 import 'package:payroll/widgets/navigationBarIcon.dart';
+import 'package:provider/provider.dart';
 
 import '../settings/add-settings.dart';
 
@@ -45,90 +47,92 @@ class _SettingsState extends State<Settings> {
     height=MediaQuery.of(context).size.height;
     width2=width-16;
     return SafeArea(
-      child:Scaffold(
-      body: Container(
-        child: Column(
-          children: [
-            Container(
-              width: width,
-              height: 70,
-              color: Color(0xff4852FF),
-              child: Row(
-                children: [
-                  GestureDetector(
-                      onTap: (){
-                        widget.voidCallback();
-                        //scaffoldkey.currentState.openDrawer();
-                      },
-                      child: NavBarIcon()
-                  ),
-                  Container(
-                    child: Text('Settings',style: TextStyle(color: Color(0xffffffff),fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 20.0,),
-            Wrap(
-              runSpacing: 30,
-              spacing: 50,
-              children: settingsList.asMap().map((i, value) => MapEntry(i, GestureDetector(
-                onTap: (){
-                  if(i==0){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Addsettings()),);
-                  }
-                  if(i==1){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LocalizationSettings()),);
-                  }
-                  else if(i==2){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ThemeSettings()),);
-                  }
-                  else if(i==3){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ApprovalSettings()),);
-                  }
-                  else if(i==4){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>InvoiceSettings()),);
-                  }
-                  else if(i==5){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SalarySettings()),);
-                  }
-                  else if(i==6){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>PasswordSettings()),);
-                  }
-                  else if(i==7){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LeaveSettings()),);
-                  }
-                  else if(i==8){
-                 //   Navigator.push(context, MaterialPageRoute(builder: (context)=>AttendanceSettings()),);
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Attendance(voidCallback: (){})),);
-
-                  }
-                },
-                child:  Column(
+      child:Consumer<ThemeNotifier>(
+        builder:(ctx,tn,child)=>  Scaffold(
+        body: Container(
+          child: Column(
+            children: [
+              Container(
+                width: width,
+                height: 70,
+                color:tn.primaryColor,
+                child: Row(
                   children: [
-                    Container(
-                      width: width*0.20,
-                      height: width*0.20,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                       // borderRadius: BorderRadius.all( Radius.circular(50)),
-                        color: value.unSelectColor,
-                      ),
-                      child: Center(child: Image.asset(value.img,width: 40,)),
+                    GestureDetector(
+                        onTap: (){
+                          widget.voidCallback();
+                          //scaffoldkey.currentState.openDrawer();
+                        },
+                        child: NavBarIcon()
                     ),
-                    SizedBox(height: 5,),
                     Container(
-                      child: Text(value.title,
-                        style: TextStyle(color: Color(0xff62626C),fontSize: 15,fontFamily: 'RM'),
-                      ),
+                      child: Text('Settings',style: TextStyle(color: Color(0xffffffff),fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'RR'),),
                     ),
                   ],
                 ),
-              ))).values.toList()
-            ),
-          ],
+              ),
+              SizedBox(height: 20.0,),
+              Wrap(
+                runSpacing: 30,
+                spacing: 50,
+                children: settingsList.asMap().map((i, value) => MapEntry(i, GestureDetector(
+                  onTap: (){
+                    if(i==0){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Addsettings()),);
+                    }
+                    if(i==1){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>LocalizationSettings()),);
+                    }
+                    else if(i==2){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ThemeSettings()),);
+                    }
+                    else if(i==3){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ApprovalSettings()),);
+                    }
+                    else if(i==4){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>InvoiceSettings()),);
+                    }
+                    else if(i==5){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>SalarySettings()),);
+                    }
+                    else if(i==6){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>PasswordSettings()),);
+                    }
+                    else if(i==7){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>LeaveSettings()),);
+                    }
+                    else if(i==8){
+                   //   Navigator.push(context, MaterialPageRoute(builder: (context)=>AttendanceSettings()),);
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Attendance(voidCallback: (){})),);
+
+                    }
+                  },
+                  child:  Column(
+                    children: [
+                      Container(
+                        width: width*0.20,
+                        height: width*0.20,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                         // borderRadius: BorderRadius.all( Radius.circular(50)),
+                          color: value.unSelectColor,
+                        ),
+                        child: Center(child: Image.asset(value.img,width: 40,)),
+                      ),
+                      SizedBox(height: 5,),
+                      Container(
+                        child: Text(value.title,
+                          style: TextStyle(color: Color(0xff62626C),fontSize: 15,fontFamily: 'RM'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ))).values.toList()
+              ),
+            ],
+          ),
         ),
-      ),
+        ),
       ),
     );
   }

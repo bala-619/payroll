@@ -33,6 +33,7 @@ dependencies:
   page_transition:
   curved_navigation_bar:
   intl:
+  provider:
 
 dev_dependencies:
   flutter_test:

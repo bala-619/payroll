@@ -7,6 +7,7 @@ import 'package:payroll/widgets/size.dart';
 
 
 
+
 class ReportGridStyleModel2{
   String? columnName;
   double width;

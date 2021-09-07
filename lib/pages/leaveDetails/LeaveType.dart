@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:payroll/widgets/constants.dart';
 import 'package:payroll/widgets/linearProgressBar.dart';
 import 'package:payroll/widgets/navigationBarIcon.dart';
@@ -48,15 +49,89 @@ class _LeaveReportState extends State<LeaveReport> {
             color: Color(0Xff4B5AFF),
             backgroundColor: Color(0xffffffff),
             items: <Widget>[
-              Icon(Icons.add, size: 30,color: Colors.white,),
+              GestureDetector(
+                onTap: (){
+                  showModalBottomSheet(
+                    backgroundColor: Color(0xFF3D73DD) ,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30)),
+                      ),
+                      context: context,
+                      builder: (context) {
+                        return Container(
+                          width: width*1,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30)),
+                            color: Color(0xFF3D73DD),
+                          ),
+                          height: 250,
+                          padding: EdgeInsets.all(25.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children:[
+                              Container(
+                                child: Text('Leave Status', style:TextStyle(fontSize: 16,fontFamily:'RB',color: Color(0XFFFFFFFF),),textAlign: TextAlign.left,),
+                              ),
+                              SizedBox(height: 20,),
+                              Container(
+                                width: width,
+                                child: Wrap(
+                                  runSpacing: 20,
+                                  spacing: 20,
+                                  children: [
+                                    Container(
+                                      width: width*0.3,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(25),
+                                        color: Color(0XFF2559BE),
+                                      ),
+                                      child: Center(
+                                        child: Text('Pending',style:TextStyle(fontSize: 16,fontFamily:'RB',color: Color(0XFFFFFFFF),)),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: width*0.3,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(25),
+                                        color: Color(0XFFFFFFFF),
+                                      ),
+                                      child: Center(
+                                        child: Text('Approved',style:TextStyle(fontSize: 16,fontFamily:'RB',color: Color(0XFF2559BE),)),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: width*0.3,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(25),
+                                        color: Color(0XFF2559BE),
+                                      ),
+                                      child: Center(
+                                        child: Text('Rejected',style:TextStyle(fontSize: 16,fontFamily:'RB',color: Color(0XFFFFFFFF),)),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      });
+                },
+                child: Container(
+                  child: Icon(Icons.filter_alt_outlined, size: 30,color: Colors.white,),
+                ),
+              ),
               Icon(Icons.list, size: 30,color: Colors.white,),
               Icon(Icons.compare_arrows, size: 30,color: Colors.white,),
             ],
-            onTap: (index) {
-              if(index==0){
-                // Navigator.push(context, MaterialPageRoute(builder: (context)=>),);
-              }
-            },
+            // onTap: (index) {
+            //   if(index==0){
+            //     // Navigator.push(context, MaterialPageRoute(builder: (context)=>),);
+            //   }
+            // },
           ),
           body: Container(
             child: Column(
