@@ -17,8 +17,10 @@ class Employee extends StatefulWidget {
   _EmployeeState createState() => _EmployeeState();
 }
 
-class _EmployeeState extends State<Employee> {
+class _EmployeeState extends State<Employee> with TickerProviderStateMixin{
   GlobalKey <ScaffoldState> scaffoldkey=new GlobalKey<ScaffoldState>();
+
+
   @override
   late  double width,height,width2;
   Widget build(BuildContext context) {
@@ -74,7 +76,7 @@ class _EmployeeState extends State<Employee> {
                     Container(child: CompanySettingsTextField(hintText: "Search Employee Id & Name", img: "assets/search.png")),
                     SizedBox(height: 15,),
                     Container(
-                      height: height-242,
+                      height: height-272,
                       child: SingleChildScrollView(
                         scrollDirection: Axis.vertical,
                         child: Wrap(
