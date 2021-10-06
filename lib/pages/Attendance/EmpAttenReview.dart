@@ -4,7 +4,8 @@ import 'package:payroll/pages/Attendance/empAttenStatus.dart';
 import 'package:payroll/pages/Attendance/reportDataTableWithoutModel.dart';
 import 'package:payroll/widgets/constants.dart';
 import 'package:payroll/widgets/navigationBarIcon.dart';
-import 'package:payroll/widgets/size.dart';
+import 'package:scutiwidgets/pageRoutes.dart' as pr;
+import 'package:scutiwidgets/size.dart';
 
 class AttendanceOverView extends StatefulWidget {
   VoidCallback voidCallback;
@@ -152,7 +153,8 @@ class _AttendanceOverViewState extends State<AttendanceOverView> {
                gridData: data,
                gridDataRowList: gridHeaderList,
                func: (i){
-                 Navigator.push(context, MaterialPageRoute(builder: (context)=>AttenSatus()),);
+                // Navigator.push(context, MaterialPageRoute(builder: (context)=>AttenSatus()),);
+                 Navigator.push(context,pr.PageRoute().slideFromLeftToRight(AttenSatus()),);
                },
              )
            ],

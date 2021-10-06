@@ -15,8 +15,9 @@ import 'package:payroll/pages/Employee/overtime.dart';
 import 'package:payroll/pages/Employee/shiftschedule.dart';
 import 'package:payroll/pages/leaveDetails/LeaveType.dart';
 import 'package:payroll/pages/mainpage/settings.dart';
-import 'package:payroll/widgets/size.dart';
 import 'package:provider/provider.dart';
+import 'package:scutiwidgets/expandedSection.dart';
+import 'package:scutiwidgets/size.dart';
 
 import 'dashboard.dart';
 class Masterpage extends StatefulWidget {
@@ -29,7 +30,7 @@ class Masterpage extends StatefulWidget {
 class _MasterpageState extends State<Masterpage> with TickerProviderStateMixin{
   @override
   GlobalKey <ScaffoldState> scaffoldkey=new GlobalKey<ScaffoldState>();
-  int menuSel=5;
+  int menuSel=14;
   bool isEmployeeOpen=false;
   late  double width,height,width2;
 
@@ -169,76 +170,77 @@ class _MasterpageState extends State<Masterpage> with TickerProviderStateMixin{
                               ),
                             ),
                             SizedBox(height: 5,),
-                            AnimatedContainer(
-                              curve: Curves.easeIn,
-                              color: Colors.white,
-                              width: 200.0, // change width or height to see animation
-                              height: isEmployeeOpen?180.0:0,
-                              duration: const Duration(milliseconds: 300),
-                              child: Column(
-                                children: [
+                            CustomExpansionTile(
+                              expand: isEmployeeOpen,
+                              child: Container(
+                                color: Colors.white,
+                                width: width*0.7, // change width or height to see animation
+                                height: 180,
+                                child: Column(
+                                  children: [
 
-                                  SubHeading(
-                                      ontap: (){
-                                        onSubHeadClick(4);
-                                      },
-                                      title: 'All Employee'
-                                  ),
-                                  // SubHeading(
-                                  //     ontap: (){
-                                  //       onSubHeadClick(5);
-                                  //     },
-                                  //     title: 'Leave(Admin)'
-                                  // ),
-                                  // SubHeading(
-                                  //     ontap: (){
-                                  //       onSubHeadClick(6);
-                                  //     },
-                                  //     title: 'Leave(Employee)'
-                                  // ),
-                                  // SubHeading(
-                                  //     ontap: (){
-                                  //       onSubHeadClick(7);
-                                  //     },
-                                  //     title: 'Attendance(Admin)'
-                                  // ),
-                                  // SubHeading(
-                                  //     ontap: (){
-                                  //       onSubHeadClick(8);
-                                  //     },
-                                  //     title: 'Attendance(Employee)'
-                                  // ),
-                                  SubHeading(
-                                      ontap: (){
-                                        onSubHeadClick(9);
-                                      },
-                                      title: 'Departments'
-                                  ),
-                                  SubHeading(
-                                      ontap: (){
-                                        onSubHeadClick(10);
-                                      },
-                                      title: 'Designations'
-                                  ),
-                                  SubHeading(
-                                      ontap: (){
-                                        onSubHeadClick(11);
-                                      },
-                                      title: 'Timesheet'
-                                  ),
-                                  SubHeading(
-                                      ontap: (){
-                                        onSubHeadClick(12);
-                                      },
-                                      title: 'Shift & Schedule'
-                                  ),
-                                  SubHeading(
-                                      ontap: (){
-                                        onSubHeadClick(13);
-                                      },
-                                      title: 'Overtime'
-                                  ),
-                                ],
+                                    SubHeading(
+                                        ontap: (){
+                                          onSubHeadClick(4);
+                                        },
+                                        title: 'All Employee'
+                                    ),
+                                    // SubHeading(
+                                    //     ontap: (){
+                                    //       onSubHeadClick(5);
+                                    //     },
+                                    //     title: 'Leave(Admin)'
+                                    // ),
+                                    // SubHeading(
+                                    //     ontap: (){
+                                    //       onSubHeadClick(6);
+                                    //     },
+                                    //     title: 'Leave(Employee)'
+                                    // ),
+                                    // SubHeading(
+                                    //     ontap: (){
+                                    //       onSubHeadClick(7);
+                                    //     },
+                                    //     title: 'Attendance(Admin)'
+                                    // ),
+                                    // SubHeading(
+                                    //     ontap: (){
+                                    //       onSubHeadClick(8);
+                                    //     },
+                                    //     title: 'Attendance(Employee)'
+                                    // ),
+                                    SubHeading(
+                                        ontap: (){
+                                          onSubHeadClick(9);
+                                        },
+                                        title: 'Departments'
+                                    ),
+                                    SubHeading(
+                                        ontap: (){
+                                          onSubHeadClick(10);
+                                        },
+                                        title: 'Designations'
+                                    ),
+                                    SubHeading(
+                                        ontap: (){
+                                          onSubHeadClick(11);
+                                        },
+                                        title: 'Timesheet'
+                                    ),
+                                    SubHeading(
+                                        ontap: (){
+                                          onSubHeadClick(12);
+                                        },
+                                        title: 'Shift & Schedule'
+                                    ),
+                                    SubHeading(
+                                        ontap: (){
+                                          onSubHeadClick(13);
+                                        },
+                                        title: 'Overtime'
+                                    ),
+                                  ],
+                                ),
                               ),
                             )
                           ],
@@ -378,7 +380,7 @@ class SubHeading extends StatelessWidget {
     return GestureDetector(
       onTap: ontap,
       child: Container(
-          padding: EdgeInsets.only(left: 40),
+          padding: EdgeInsets.only(left: 80),
           height: 30,
           alignment: Alignment.centerLeft,
           child: Text('$title',style: TextStyle(fontSize: 14,color:Colors.black26, fontFamily:'RR'), )

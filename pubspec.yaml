@@ -34,6 +34,9 @@ dependencies:
   curved_navigation_bar:
   intl:
   provider:
+  scutiwidgets:
+    git:
+      url: https://github.com/muthu-gokul/scutiwidgets.git
 
 dev_dependencies:
   flutter_test:

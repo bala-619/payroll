@@ -158,6 +158,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.0"
+  scutiwidgets:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "67902b127fa3b2c8f272d9c64c19971ec8af6d86"
+      url: "https://github.com/muthu-gokul/scutiwidgets.git"
+    source: git
+    version: "0.0.3"
   sky_engine:
     dependency: transitive
     description: flutter

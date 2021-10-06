@@ -2,9 +2,9 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:payroll/widgets/constants.dart';
-import 'package:payroll/widgets/linearProgressBar.dart';
 import 'package:payroll/widgets/navigationBarIcon.dart';
-import 'package:payroll/widgets/size.dart';
+import 'package:scutiwidgets/linearProgressBar.dart';
+import 'package:scutiwidgets/size.dart';
 
 import 'LeavereportDataTableWithoutModel.dart';
 

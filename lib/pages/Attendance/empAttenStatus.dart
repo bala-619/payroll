@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:payroll/pages/Attendance/reportDataTableWithoutModel.dart';
 import 'package:payroll/widgets/constants.dart';
-import 'package:payroll/widgets/linearProgressBar.dart';
 import 'package:payroll/widgets/navigationBarIcon.dart';
-import 'package:payroll/widgets/size.dart';
+import 'package:scutiwidgets/linearProgressBar.dart';
+import 'package:scutiwidgets/size.dart';
 
 class AttenSatus extends StatefulWidget {
   @override

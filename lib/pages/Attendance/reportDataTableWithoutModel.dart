@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:payroll/widgets/constants.dart';
-import 'package:payroll/widgets/size.dart';
+import 'package:scutiwidgets/size.dart';
 
 
 
