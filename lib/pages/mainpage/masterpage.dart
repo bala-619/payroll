@@ -11,7 +11,7 @@ import 'package:payroll/pages/Departmentmodules/departments.dart';
 import 'package:payroll/pages/EmployeeModule/employee.dart';
 import 'package:payroll/pages/Employee/leaveAdmin.dart';
 import 'package:payroll/pages/Employee/leaveEmployee.dart';
-import 'package:payroll/pages/Employee/overtime.dart';
+import 'package:payroll/pages/Overtimemodules/overtime.dart';
 import 'package:payroll/pages/Employee/shiftschedule.dart';
 import 'package:payroll/pages/leaveDetails/LeaveType.dart';
 import 'package:payroll/pages/mainpage/settings.dart';
