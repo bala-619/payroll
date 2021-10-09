@@ -116,9 +116,12 @@ class _LeaveDataTable2State extends State<LeaveDataTable2> {
     return Container(
         height: SizeConfig.screenHeight!-widget.gridBodyReduceHeight,
         width: SizeConfig.screenWidth,
-        margin: EdgeInsets.only(top: widget.topMargin),
+        margin: EdgeInsets.only(top: widget.topMargin,left:5 ,right: 5),
+        padding: EdgeInsets.only(bottom: 5),
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey.withOpacity(0.5)),
+            borderRadius: BorderRadius.circular(10),
             color:gridBodyBgColor,
             //borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10))
         ),
@@ -133,23 +136,23 @@ class _LeaveDataTable2State extends State<LeaveDataTable2> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: width-152,
+                    width: width-160,
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     margin: EdgeInsets.only(right: 1),
                     decoration:BoxDecoration(
                       color: addNewTextFieldBorder,
                       borderRadius: BorderRadius.only(
                           topRight: Radius.circular(10),
-                          bottomRight: Radius.circular(10)
+                          bottomRight: Radius.circular(0)
                       ),
                     ),
                     child: Container(
                       height: 50,
-                      width: width-152,
-                      margin: EdgeInsets.only(right: 1,bottom: 1,top: 1),
+                      width: width-160,
+                      margin: EdgeInsets.only(right: 0,bottom: 1,top: 0),
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.only(topRight: Radius.circular(10),bottomRight: Radius.circular(10))
+                          borderRadius: BorderRadius.only(topRight: Radius.circular(10),bottomRight: Radius.circular(0))
                       ),
                       //color: showShadow? bgColor.withOpacity(0.8):bgColor,
                       child: SingleChildScrollView(
@@ -182,7 +185,7 @@ class _LeaveDataTable2State extends State<LeaveDataTable2> {
                   ),
                   Container(
                     height: SizeConfig.screenHeight!-widget.gridBodyReduceHeight,
-                    width: width-149,
+                    width: width-160,
                     alignment: Alignment.topLeft,
                     color: gridBodyBgColor,
                     child: SingleChildScrollView(
@@ -210,7 +213,7 @@ class _LeaveDataTable2State extends State<LeaveDataTable2> {
                                 child: Container(
 
                                   decoration: BoxDecoration(
-                                    border: gridBottomborder,
+                                    // border: gridBottomborder,
                                     color: i%2!=0?Color(0xFFE9EFFF):Colors.transparent,
                                 //    color: widget.selectedIndex==i?yellowColor:gridBodyBgColor,
                                   ),
@@ -289,29 +292,29 @@ class _LeaveDataTable2State extends State<LeaveDataTable2> {
 
             //not Scrollable
             Positioned(
-              left: 5,
+              left: 0,
               child:widget.gridDataRowList!.isEmpty?Container(): Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    clipBehavior: Clip.antiAlias,
+                   clipBehavior: Clip.antiAlias,
                     decoration:BoxDecoration(
                       color: addNewTextFieldBorder,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),
-                            bottomLeft: Radius.circular(10)
+                        //    bottomLeft: Radius.circular(10)
                         ),
                     ),
                     child: Container(
                       height: 50,
                       width: 145,
-                      margin: EdgeInsets.only(left: 1,bottom: 1,top: 1),
+                      margin: EdgeInsets.only(left: 0,bottom: 1,top: 0),
                       padding: widget.gridDataRowList![0].edgeInsets,
                       alignment: widget.gridDataRowList![0].alignment,
                    //   clipBehavior: Clip.antiAlias,
                       decoration: BoxDecoration(
                       color: Colors.white,
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10))
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(0))
                       ),
                       child: FittedBox(child: Text("${widget.gridDataRowList![0].columnName}",
                         style: TextStyle(fontFamily: 'RR',color: bgColor,fontSize: 16),)),
@@ -352,7 +355,7 @@ class _LeaveDataTable2State extends State<LeaveDataTable2> {
                                 padding: widget.gridDataRowList![0].edgeInsets,
                                 margin: EdgeInsets.only(bottom:i==widget.gridData!.length-1?70: 0),
                                 decoration: BoxDecoration(
-                                  border: gridBottomborder,
+                                  // border: gridBottomborder,
                                 //  color: widget.selectedIndex==i?yellowColor:gridBodyBgColor,
                                   color: i%2!=0?Color(0xFFE9EFFF):Colors.transparent,
                                 ),

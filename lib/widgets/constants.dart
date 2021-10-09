@@ -16,6 +16,7 @@ const Color addNewTextFieldFocusBorder=Color(0xFF6B6B6B);
  TextStyle gridTextColor14=TextStyle(fontFamily: 'RR',color: grey,fontSize: 14);
  TextStyle TSWhite166=TextStyle(fontFamily: 'RR',fontSize: 16,color: Colors.white,letterSpacing: 0.1);
  TextStyle hintText=TextStyle(fontFamily: 'RR',fontSize: 16,color: grey.withOpacity(0.5));
+ TextStyle gridFooterColor14=TextStyle(fontFamily: 'USB',color:Color(0xFF1f1f1f),fontSize: 13);
 
  late String prefEmail;
  late String prefPassword;

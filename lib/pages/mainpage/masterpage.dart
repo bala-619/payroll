@@ -3,12 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:payroll/notifiers/themeNotifier.dart';
 import 'package:payroll/pages/Attendance/EmpAttenReview.dart';
 import 'package:payroll/pages/Attendance/profile.dart';
-import 'package:payroll/pages/Employee/Designation.dart';
-import 'package:payroll/pages/Employee/Timesheet.dart';
+import 'package:payroll/pages/Designationmodules/designation.dart';
+import 'package:payroll/pages/Timesheet/Timesheet.dart';
 import 'package:payroll/pages/Employee/attendanceAdmin.dart';
 import 'package:payroll/pages/Employee/attendanceEmployee.dart';
-import 'package:payroll/pages/Employee/departments.dart';
-import 'package:payroll/pages/Employee/employee.dart';
+import 'package:payroll/pages/Departmentmodules/departments.dart';
+import 'package:payroll/pages/EmployeeModule/employee.dart';
 import 'package:payroll/pages/Employee/leaveAdmin.dart';
 import 'package:payroll/pages/Employee/leaveEmployee.dart';
 import 'package:payroll/pages/Employee/overtime.dart';
@@ -323,7 +323,7 @@ class _MasterpageState extends State<Masterpage> with TickerProviderStateMixin{
 
                 scaffoldkey.currentState!.openDrawer();
               },
-            ):menuSel==10?Designations (
+            ):menuSel==10?Designations(
               voidCallback:(){
 
                 scaffoldkey.currentState!.openDrawer();

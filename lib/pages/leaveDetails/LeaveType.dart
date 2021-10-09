@@ -164,6 +164,7 @@ class _LeaveReportState extends State<LeaveReport> {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
+
                       Container(
                         padding: const EdgeInsets.all(15.0),
                         margin: EdgeInsets.all(8.0),
@@ -267,7 +268,7 @@ class _LeaveReportState extends State<LeaveReport> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20.0,),
+                SizedBox(height: 10.0,),
                 LeaveDataTable2 (
                   voidCallback:(){
 
