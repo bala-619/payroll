@@ -16,20 +16,20 @@ class Signup extends StatefulWidget {
 
 class _SignupState extends State<Signup> {
 
-  @override
-  late  double width,height,width2;
-  Widget build(BuildContext context) {
-    width=MediaQuery.of(context).size.width;
-    height=MediaQuery.of(context).size.height;
-    width2=width-16;
-    return SafeArea(
-      child: Consumer<ThemeNotifier>(
+    @override
+    late  double width,height,width2;
+    Widget build(BuildContext context) {
+      width=MediaQuery.of(context).size.width;
+      height=MediaQuery.of(context).size.height;
+      width2=width-16;
+      return SafeArea(
+        child: Consumer<ThemeNotifier>(
 
-        builder:(ctx,tn,child)=>Scaffold(
-          backgroundColor: Color(0xffffffff),
-          body: Container(
-            width: width,
-            height: height,
+          builder:(ctx,tn,child)=>Scaffold(
+            backgroundColor: Color(0xffffffff),
+            body: Container(
+              width: width,
+              height: height,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
